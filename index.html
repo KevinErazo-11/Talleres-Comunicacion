@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador - Taller de la Comunicación Científica</title>
+    <!-- KaTeX para fórmulas (por si acaso se necesitan en metodología) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Taller de la Comunicación Científica</h1>
+        <div class="module-selector">
+            <label for="moduleSelect">Seleccione un módulo:</label>
+            <select id="moduleSelect">
+                <option value="modulo1">Módulo 1: Introduction of the course</option>
+                <option value="modulo2">Módulo 2: Communication parts and other concepts</option>
+                <option value="modulo3">Módulo 3: Science Communication</option>
+                <option value="modulo4">Módulo 4: Scientific dissemination</option>
+                <option value="modulo5">Módulo 5: Parts of scientific research</option>
+                <option value="modulo6">Módulo 6: Types of research</option>
+            </select>
+            <button id="loadModuleBtn">Cargar Módulo</button>
+        </div>
+    </header>
+
+    <main id="quizContainer" class="hidden">
+        <div class="quiz-layout">
+            <div class="question-area">
+                <div class="question-header">
+                    <h2 id="questionNumber">Pregunta 1 de X</h2>
+                    <span id="questionTypeBadge" class="badge"></span>
+                </div>
+                <div id="questionText" class="question-text"></div>
+                <div id="optionsContainer" class="options-container"></div>
+                
+                <div id="feedbackBox" class="feedback-box hidden">
+                    <h3 id="feedbackTitle"></h3>
+                    <p id="feedbackText"></p>
+                </div>
+
+                <div class="navigation-buttons">
+                    <button id="prevBtn" class="btn secondary" disabled>← Anterior</button>
+                    <button id="checkBtn" class="btn primary">Comprobar</button>
+                    <button id="nextBtn" class="btn primary">Siguiente →</button>
+                </div>
+            </div>
+
+            <aside class="sidebar">
+                <div class="nav-panel">
+                    <h3>Navegación por el cuestionario</h3>
+                    <div id="gridContainer" class="grid-container"></div>
+                    <div class="legend">
+                        <span class="legend-item"><span class="box correct-box">✔</span> Correcta</span>
+                        <span class="legend-item"><span class="box incorrect-box">✖</span> Incorrecta</span>
+                        <span class="legend-item"><span class="box partial-box">!</span> Parcial</span>
+                        <span class="legend-item"><span class="box unanswered-box"></span> Sin contestar</span>
+                    </div>
+                    <button id="restartBtn" class="btn outline">↻ Reiniciar cuestionario</button>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Scripts de los módulos y lógica principal -->
+    <script src="modulo1.js"></script>
+    <script src="modulo2.js"></script>
+    <script src="modulo3.js"></script>
+    <script src="modulo4.js"></script>
+    <script src="modulo5.js"></script>
+    <script src="modulo6.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
